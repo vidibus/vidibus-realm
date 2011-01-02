@@ -1,0 +1,7 @@
+= vidibus-realm
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2010 Andre Pankratz. See LICENSE for details.
