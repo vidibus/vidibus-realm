@@ -1,4 +1,4 @@
-= vidibus-realm
+= Vidibus::Realm
 
 Description goes here.
 
