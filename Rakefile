@@ -15,7 +15,7 @@ end
 Rake::RDocTask.new do |rdoc|
   version = File.exist?("VERSION") ? File.read("VERSION") : ""
   rdoc.rdoc_dir = "rdoc"
-  rdoc.title = "vidibus-service #{version}"
+  rdoc.title = "Vidibus::Realm #{version}"
   rdoc.rdoc_files.include("README*")
   rdoc.rdoc_files.include("lib/**/*.rb")
   rdoc.options << "--charset=utf-8"
