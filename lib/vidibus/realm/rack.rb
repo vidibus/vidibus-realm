@@ -24,6 +24,8 @@ module Vidibus
       def subdomain
         env["SERVER_NAME"].match(/(.+)\.#{::Service.this.domain}/)
         $1
+      rescue ::Service::ConfigurationError
+        # Current service has not been configured yet.
       end
 
       # Returns realm from constant or subdomain.
