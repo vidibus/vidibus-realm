@@ -17,6 +17,12 @@ module Vidibus
         def realm
           env[:realm]
         end
+
+        # Sets the current realm.
+        # Usually the realm will be detected and set by the Rack app.
+        def set_realm(value)
+          env[:realm] = value
+        end
       end
     end
   end
