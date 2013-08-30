@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/vidibus/vidibus-realm"
   s.authors = ["Andre Pankratz"]
   s.email = "andre@vidibus.com"
+  s.license = 'MIT'
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project = "vidibus-realm"
