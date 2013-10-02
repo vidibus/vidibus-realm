@@ -19,7 +19,7 @@ module Vidibus
 
       # Returns current subdomain which is, for now, the realm uuid itself.
       # The hostname must match the current service's domain because it may
-      # contain several subdomains as well which are not suitable for 
+      # contain several subdomains as well which are not suitable for
       # identifying the current realm.
       def subdomain
         env["SERVER_NAME"].match(/(.+)\.#{::Service.this.domain}/)
