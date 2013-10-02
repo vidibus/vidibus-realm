@@ -36,6 +36,26 @@ describe "Vidibus::Realm::Rack" do
     last_request.env[:realm].should be_nil
   end
 
+  context 'if Service has not been set up' do
+    it 'should raise an error' do
+      stub(Service).this { raise(Vidibus::Service::ConfigurationError) }
+      expect { get 'http://hello.else.local' }.
+        to raise_error(Vidibus::Realm::ServiceError)
+    end
+
+    it 'should not raise an error for connector requests' do
+      stub(Service).this { raise(Vidibus::Service::ConfigurationError) }
+      expect { get 'http://hello.else.local/connector' }.
+        not_to raise_error
+    end
+
+    it 'should not raise an error for connector requests with args' do
+      stub(Service).this { raise(Vidibus::Service::ConfigurationError) }
+      expect { get 'http://hello.else.local/connector?uuid=124' }.
+        not_to raise_error
+    end
+  end
+
   it "should not set realm by subdomain if no subdomain is available" do
     get "http://something.else.local"
     last_request.env[:realm].should be_nil

@@ -24,8 +24,10 @@ module Vidibus
       def subdomain
         env["SERVER_NAME"].match(/(.+)\.#{::Service.this.domain}/)
         $1
-      rescue ::Service::ConfigurationError
-        # Current service has not been configured yet.
+      rescue Vidibus::Service::ConfigurationError
+        unless env['PATH_INFO'] == '/connector'
+          raise(ServiceError, 'This service has not been configured yet')
+        end
       end
 
       # Returns realm from constant or subdomain.
