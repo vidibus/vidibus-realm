@@ -13,7 +13,7 @@ describe "Vidibus::Realm::Rack" do
 
   def downstream_app
     @downstream_app ||= OpenStruct.new.tap do |a|
-      mock(a).call.with_any_args {[200,{"Content-Type" => "text/html"},[]]}
+      stub(a).call.with_any_args {[200,{"Content-Type" => "text/html"},[]]}
     end
   end
 
