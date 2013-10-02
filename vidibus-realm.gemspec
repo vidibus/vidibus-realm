@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "vidibus-realm"
 
   s.add_dependency "activesupport", '>= 3'
-  s.add_dependency "vidibus-service", '>= 0.2.0'
+  s.add_dependency "vidibus-service", '>= 0.3.0'
 
   s.add_development_dependency "bundler", ">= 1.0.0"
   s.add_development_dependency "rake", ">= 0"
