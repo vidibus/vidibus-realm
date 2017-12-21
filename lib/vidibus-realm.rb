@@ -8,7 +8,7 @@ if defined?(::Rails)
   module Vidibus
     module Realm
       class Engine < ::Rails::Engine
-        config.app_middleware.use("Vidibus::Realm::Rack")
+        config.app_middleware.use(Vidibus::Realm::Rack)
       end
     end
   end
