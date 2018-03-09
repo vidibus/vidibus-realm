@@ -5,7 +5,7 @@ module Vidibus
         extend ActiveSupport::Concern
 
         included do
-          helper_method :realm
+          helper_method(:realm) if respond_to?(:helper_method)
         end
 
         # Ensures that a realm is present.
